@@ -4,6 +4,8 @@ const schema = require('./schema.js')
 
 const app = express()
 
+app.use(express.static(__dirname + '/../client/dist'))
+
 app.use('/graphql', expressGraphQL({
   schema: schema, 
   graphiql: true
